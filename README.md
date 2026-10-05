@@ -109,29 +109,3 @@ Requisições com corpo usam `application/x-www-form-urlencoded`; respostas usam
 | DELETE | `/api/users/{id}` | Excluir conta |
 
 O máximo por página é 100. Produtos, histórico e usuários usam paginação na interface.
-
-## Entregáveis da prova
-
-- `docs/plano_testes.docx`: plano de testes.
-- `docs/testes/cenario1.txt` a `cenario10.txt`: evidências produzidas pela execução real dos testes.
-- `docs/testes/resumo.txt`: resumo da execução.
-- `resultados.docx`: dados usados, resultados obtidos e conclusões.
-- `.github/workflows/java.yml`: compilação e testes com JDK 21.
-
-Ao executar os testes novamente, as evidências de texto são atualizadas; o documento de resultados representa a execução entregue. Cada teste usa um arquivo temporário isolado e não altera os dados reais da aplicação.
-
-O repositório fornecido estava vazio, sem scripts ou modelo de dados. As entidades foram definidas a partir do enunciado. Caso exista outro repositório-base da prova, será necessário conciliar as classes e atributos com os scripts dele.
-
-## Versionamento na avaliação
-
-Para seguir a regra da prova em uma nova avaliação, parta da principal, crie uma branch com seu nome e sobrenome e abra um pull request ao finalizar:
-
-```bash
-git switch main
-git switch -c nome-sobrenome
-git add .
-git commit -m "Implementa controle de estoque e perfis de acesso"
-git push -u origin nome-sobrenome
-```
-
-Abra o PR pelo GitHub, com base `main`. Ajuste `nome-sobrenome` para seu nome real.
