@@ -1,0 +1,6 @@
+Cenário 6 - Serializar retiradas simultâneas
+Executado em: 2026-10-05T11:47:18.797063350Z
+Java: 21.0.12
+Dados: Saldo 10; duas saídas concorrentes de 7
+Saída obtida: Uma saída aceita, outra bloqueada; saldo final 3.
+Conclusão: APROVADO

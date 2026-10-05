@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Almoxarifado</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><div><span class="eyebrow">GESTÃO DE MATERIAIS</span><h1>Almoxarifado</h1></div><div id="identity"></div><button id="logout" hidden>Sair</button></header>
+<main>
+<p id="notice" role="status" aria-live="polite" hidden></p>
+<section id="auth" class="auth">
+<div><h2>Controle o estoque com segurança.</h2><p>Registre entradas e saídas e acompanhe o histórico de cada material.</p></div>
+<form id="login"><h2>Entrar</h2><label>E-mail<input name="email" type="email" autocomplete="username" required maxlength="200"></label><label>Senha<input name="password" type="password" autocomplete="current-password" required maxlength="128"></label><button>Entrar no sistema</button><button type="button" class="secondary" id="show-register">Criar conta de operador</button></form>
+<form id="register" hidden><h2>Criar conta de operador</h2><label>Nome<input name="name" required maxlength="100" autocomplete="name"></label><label>E-mail<input name="email" type="email" required maxlength="200" autocomplete="email"></label><label>Senha<input name="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></label><button>Cadastrar</button><button type="button" class="secondary" id="show-login">Voltar para entrar</button></form>
+</section>
+<div id="workspace" hidden>
+<nav><button data-tab="products">Produtos</button><button data-tab="movements">Movimentações</button><button data-tab="users" id="users-tab" hidden>Usuários</button><button data-tab="account">Minha conta</button></nav>
+<section id="products" class="tab">
+<div class="section-heading"><div><h2>Produtos e saldo</h2><p>O saldo é atualizado ao registrar uma movimentação.</p></div></div>
+<form id="filters" class="filters"><label>Nome<input name="name" placeholder="Buscar material"></label><label>Cadastrado de<input name="from" type="date"></label><label>Até<input name="to" type="date"></label><button>Filtrar</button><button type="button" class="secondary" id="clear-filters">Limpar</button></form>
+<div class="columns">
+<form id="product-form" class="panel"><h3 id="product-title">Cadastrar produto</h3><input name="id" type="hidden"><label>Nome<input name="name" required maxlength="100"></label><label>Unidade<input name="unit" required maxlength="20" placeholder="un, caixa, litro"></label><button>Salvar produto</button><button type="button" class="secondary" id="cancel-edit" hidden>Cancelar edição</button></form>
+<form id="movement-form" class="panel"><h3>Registrar movimentação</h3><label>Produto<select name="productId" id="product-select" required><option value="">Selecione</option></select></label><p class="hint">Selecione na lista ou use “Movimentar” no produto.</p><label>Tipo<select name="type"><option value="ENTRADA">Entrada</option><option value="SAIDA">Saída</option></select></label><label>Quantidade inteira<input name="quantity" type="number" min="1" step="1" required></label><button>Registrar</button></form>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Produto</th><th>Unidade</th><th>Saldo</th><th>Cadastrado em</th><th>Ações</th></tr></thead><tbody id="product-rows"></tbody></table></div>
+<div class="pagination"><button id="previous" class="secondary">Anterior</button><span id="page-info"></span><button id="next" class="secondary">Próxima</button></div>
+</section>
+<section id="movements" class="tab" hidden><h2>Histórico de movimentações</h2><p>Os estornos mantêm a movimentação original para preservar a rastreabilidade.</p><button id="reload-history" class="secondary">Atualizar histórico</button><div class="table-wrap"><table><thead><tr><th>Data e hora</th><th>Produto</th><th>Tipo</th><th>Quantidade</th><th>Saldo antes</th><th>Saldo depois</th><th>Responsável</th><th>Ações</th></tr></thead><tbody id="movement-rows"></tbody></table></div><div class="pagination"><button id="history-previous" class="secondary">Anterior</button><span id="history-info"></span><button id="history-next" class="secondary">Próxima</button></div></section>
+<section id="users" class="tab" hidden><h2>Gestão de usuários</h2><form id="user-form" class="panel user-form"><h3 id="user-title">Cadastrar usuário</h3><input name="id" type="hidden"><label>Nome<input name="name" required maxlength="100"></label><label>E-mail<input name="email" type="email" required maxlength="200"></label><label>Senha<input name="password" type="password" minlength="8" maxlength="128" required autocomplete="new-password"></label><label>Perfil<select name="role"><option value="OPERADOR">Operador</option><option value="ADMINISTRADOR">Administrador</option></select></label><button>Salvar usuário</button><button type="button" id="cancel-user" class="secondary" hidden>Cancelar edição</button></form><div class="table-wrap"><table><thead><tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Ações</th></tr></thead><tbody id="user-rows"></tbody></table></div><div class="pagination"><button id="users-previous" class="secondary">Anterior</button><span id="users-info"></span><button id="users-next" class="secondary">Próxima</button></div></section>
+<section id="account" class="tab" hidden><h2>Minha conta</h2><form id="account-form" class="panel user-form"><label>Nome<input name="name" required maxlength="100"></label><label>E-mail<input name="email" type="email" required maxlength="200"></label><label>Nova senha<input name="password" type="password" minlength="8" maxlength="128" autocomplete="new-password"></label><p>Deixe a senha vazia para mantê-la. Após salvar, entre novamente.</p><button>Salvar meus dados</button></form></section>
+</div>
+</main><footer>Java 21 · Controle de estoque e rastreabilidade</footer>
+</body></html>

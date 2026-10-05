@@ -1,0 +1,6 @@
+Cenário 3 - Permitir saída igual ao saldo
+Executado em: 2026-10-05T11:47:18.486971753Z
+Java: 21.0.12
+Dados: Saldo 10; saída 10
+Saída obtida: Saldo final 0; movimentação registrada.
+Conclusão: APROVADO

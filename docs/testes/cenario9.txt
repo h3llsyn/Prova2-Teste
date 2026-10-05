@@ -1,0 +1,6 @@
+Cenário 9 - Proteger e consultar rotas HTTP
+Executado em: 2026-10-05T11:47:19.772562211Z
+Java: 21.0.12
+Dados: Sem sessão, operador autenticado, sem CSRF, filtros e paginação
+Saída obtida: 401 sem sessão; 403 em exclusão e CSRF; filtros com total 1 e 0; interface retorna 200.
+Conclusão: APROVADO

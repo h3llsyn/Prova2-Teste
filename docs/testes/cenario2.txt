@@ -1,0 +1,6 @@
+Cenário 2 - Permitir saída menor que o saldo
+Executado em: 2026-10-05T11:47:18.380858154Z
+Java: 21.0.12
+Dados: Saldo 10; saída 4
+Saída obtida: Saldo final 6; saída registrada com data, hora e operador.
+Conclusão: APROVADO

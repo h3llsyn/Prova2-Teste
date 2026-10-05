@@ -1,0 +1,6 @@
+Cenário 4 - Rejeitar quantidade zero ou negativa
+Executado em: 2026-10-05T11:47:18.591433321Z
+Java: 21.0.12
+Dados: Saldo 10; saídas 0 e -1
+Saída obtida: HTTP lógico 400 em ambas; saldo 10.
+Conclusão: APROVADO

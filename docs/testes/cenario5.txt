@@ -1,0 +1,6 @@
+Cenário 5 - Controlar permissões de operador
+Executado em: 2026-10-05T11:47:18.696081825Z
+Java: 21.0.12
+Dados: Operador tenta excluir produto, excluir usuário e promover a própria conta
+Saída obtida: Operações bloqueadas com 403.
+Conclusão: APROVADO

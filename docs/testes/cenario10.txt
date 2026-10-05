@@ -1,0 +1,6 @@
+Cenário 10 - Autenticar e proteger contas
+Executado em: 2026-10-05T11:47:20.022957684Z
+Java: 21.0.12
+Dados: Login válido e inválido, e-mail repetido, último admin, usuário excluído
+Saída obtida: Login válido aceito; tentativas indevidas bloqueadas; hashes ausentes do JSON.
+Conclusão: APROVADO

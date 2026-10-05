@@ -1,0 +1,6 @@
+Cenário 7 - Persistir saldo e histórico
+Executado em: 2026-10-05T11:47:18.799644394Z
+Java: 21.0.12
+Dados: Reabrir arquivo após cenário 6
+Saída obtida: Saldo 3 e duas movimentações recuperados (entrada e saída).
+Conclusão: APROVADO

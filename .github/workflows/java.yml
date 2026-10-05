@@ -1,0 +1,20 @@
+name: Java 21 e testes de aceitação
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Compilar e testar
+        run: bash test.sh
+      - name: Publicar evidências
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias-testes-java21
+          path: docs/testes/

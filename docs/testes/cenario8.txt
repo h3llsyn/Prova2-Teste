@@ -1,0 +1,6 @@
+Cenário 8 - Estornar sem apagar auditoria
+Executado em: 2026-10-05T11:47:18.902052848Z
+Java: 21.0.12
+Dados: Entrada 10; saída 4; estorno da saída
+Saída obtida: Saldo 10; três registros preservados; segundo estorno bloqueado.
+Conclusão: APROVADO

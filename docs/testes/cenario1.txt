@@ -1,0 +1,6 @@
+Cenário 1 - Bloquear saída acima do saldo
+Executado em: 2026-10-05T11:47:18.274108414Z
+Java: 21.0.12
+Dados: Saldo 10; saída 11
+Saída obtida: Saída não permitida: estoque insuficiente. Disponível: 10. Solicitado: 11. Saldo final 10; histórico preservado.
+Conclusão: APROVADO

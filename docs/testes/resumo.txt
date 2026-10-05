@@ -1,0 +1,69 @@
+Cenário 1 - Bloquear saída acima do saldo
+Executado em: 2026-10-05T11:47:18.274108414Z
+Java: 21.0.12
+Dados: Saldo 10; saída 11
+Saída obtida: Saída não permitida: estoque insuficiente. Disponível: 10. Solicitado: 11. Saldo final 10; histórico preservado.
+Conclusão: APROVADO
+
+Cenário 2 - Permitir saída menor que o saldo
+Executado em: 2026-10-05T11:47:18.380858154Z
+Java: 21.0.12
+Dados: Saldo 10; saída 4
+Saída obtida: Saldo final 6; saída registrada com data, hora e operador.
+Conclusão: APROVADO
+
+Cenário 3 - Permitir saída igual ao saldo
+Executado em: 2026-10-05T11:47:18.486971753Z
+Java: 21.0.12
+Dados: Saldo 10; saída 10
+Saída obtida: Saldo final 0; movimentação registrada.
+Conclusão: APROVADO
+
+Cenário 4 - Rejeitar quantidade zero ou negativa
+Executado em: 2026-10-05T11:47:18.591433321Z
+Java: 21.0.12
+Dados: Saldo 10; saídas 0 e -1
+Saída obtida: HTTP lógico 400 em ambas; saldo 10.
+Conclusão: APROVADO
+
+Cenário 5 - Controlar permissões de operador
+Executado em: 2026-10-05T11:47:18.696081825Z
+Java: 21.0.12
+Dados: Operador tenta excluir produto, excluir usuário e promover a própria conta
+Saída obtida: Operações bloqueadas com 403.
+Conclusão: APROVADO
+
+Cenário 6 - Serializar retiradas simultâneas
+Executado em: 2026-10-05T11:47:18.797063350Z
+Java: 21.0.12
+Dados: Saldo 10; duas saídas concorrentes de 7
+Saída obtida: Uma saída aceita, outra bloqueada; saldo final 3.
+Conclusão: APROVADO
+
+Cenário 7 - Persistir saldo e histórico
+Executado em: 2026-10-05T11:47:18.799644394Z
+Java: 21.0.12
+Dados: Reabrir arquivo após cenário 6
+Saída obtida: Saldo 3 e duas movimentações recuperados (entrada e saída).
+Conclusão: APROVADO
+
+Cenário 8 - Estornar sem apagar auditoria
+Executado em: 2026-10-05T11:47:18.902052848Z
+Java: 21.0.12
+Dados: Entrada 10; saída 4; estorno da saída
+Saída obtida: Saldo 10; três registros preservados; segundo estorno bloqueado.
+Conclusão: APROVADO
+
+Cenário 9 - Proteger e consultar rotas HTTP
+Executado em: 2026-10-05T11:47:19.772562211Z
+Java: 21.0.12
+Dados: Sem sessão, operador autenticado, sem CSRF, filtros e paginação
+Saída obtida: 401 sem sessão; 403 em exclusão e CSRF; filtros com total 1 e 0; interface retorna 200.
+Conclusão: APROVADO
+
+Cenário 10 - Autenticar e proteger contas
+Executado em: 2026-10-05T11:47:20.022957684Z
+Java: 21.0.12
+Dados: Login válido e inválido, e-mail repetido, último admin, usuário excluído
+Saída obtida: Login válido aceito; tentativas indevidas bloqueadas; hashes ausentes do JSON.
+Conclusão: APROVADO
